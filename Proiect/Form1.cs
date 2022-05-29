@@ -74,5 +74,12 @@ namespace Proiect
             float timesZoom = 0.6F;
             pictureBoxScale.Image=My_Image.Resize(timesZoom,Emgu.CV.CvEnum.Inter.Cubic ).AsBitmap();
         }
+
+        private void buttonRotate_Click(object sender, EventArgs e)
+        {
+            float Rotate = 90F;
+            Bgr sall = new Bgr();
+            pictureBoxRotate.Image = My_Image.Rotate(Rotate,sall ,true ).AsBitmap();
+        }
     }
 }

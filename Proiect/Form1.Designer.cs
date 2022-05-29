@@ -44,12 +44,15 @@ namespace Proiect
             this.buttonRed = new System.Windows.Forms.Button();
             this.pictureBoxScale = new System.Windows.Forms.PictureBox();
             this.buttonScale = new System.Windows.Forms.Button();
+            this.pictureBoxRotate = new System.Windows.Forms.PictureBox();
+            this.buttonRotate = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grayPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChoose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContrast)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGamma)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRotate)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonGrayScale
@@ -187,11 +190,32 @@ namespace Proiect
             this.buttonScale.UseVisualStyleBackColor = true;
             this.buttonScale.Click += new System.EventHandler(this.buttonScale_Click);
             // 
+            // pictureBoxRotate
+            // 
+            this.pictureBoxRotate.Location = new System.Drawing.Point(290, 158);
+            this.pictureBoxRotate.Name = "pictureBoxRotate";
+            this.pictureBoxRotate.Size = new System.Drawing.Size(112, 111);
+            this.pictureBoxRotate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxRotate.TabIndex = 15;
+            this.pictureBoxRotate.TabStop = false;
+            // 
+            // buttonRotate
+            // 
+            this.buttonRotate.Location = new System.Drawing.Point(310, 275);
+            this.buttonRotate.Name = "buttonRotate";
+            this.buttonRotate.Size = new System.Drawing.Size(75, 23);
+            this.buttonRotate.TabIndex = 16;
+            this.buttonRotate.Text = "Rotate";
+            this.buttonRotate.UseVisualStyleBackColor = true;
+            this.buttonRotate.Click += new System.EventHandler(this.buttonRotate_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonRotate);
+            this.Controls.Add(this.pictureBoxRotate);
             this.Controls.Add(this.buttonScale);
             this.Controls.Add(this.pictureBoxScale);
             this.Controls.Add(this.buttonRed);
@@ -215,6 +239,7 @@ namespace Proiect
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGamma)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRotate)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,6 +262,8 @@ namespace Proiect
         private System.Windows.Forms.Button buttonRed;
         private System.Windows.Forms.PictureBox pictureBoxScale;
         private System.Windows.Forms.Button buttonScale;
+        private System.Windows.Forms.PictureBox pictureBoxRotate;
+        private System.Windows.Forms.Button buttonRotate;
     }
 }
 
