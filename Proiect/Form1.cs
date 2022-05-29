@@ -37,6 +37,7 @@ namespace Proiect
                 My_Image = new Image<Bgr, byte>(Openfile.FileName);
                 pictureBoxChoose.Image = My_Image.ToBitmap();
             }
+            pictureBoxROI.Image = pictureBoxChoose.Image;
         }
 
         private void Contrast_Click(object sender, EventArgs e)
@@ -81,5 +82,65 @@ namespace Proiect
             Bgr sall = new Bgr();
             pictureBoxRotate.Image = My_Image.Rotate(Rotate,sall ,true ).AsBitmap();
         }
+        Rectangle rect; Point StartROI; bool MouseDown;
+
+
+
+
+
+
+
+
+        private void pictureBoxROI_MouseMove(object sender, MouseEventArgs e)
+        {
+
+            if (pictureBoxROI.Image == null)
+            {
+                return;
+            }
+
+            int width = Math.Max(StartROI.X, e.X) - Math.Min(StartROI.X, e.X);
+            int height = Math.Max(StartROI.Y, e.Y) - Math.Min(StartROI.Y, e.Y);
+            rect = new Rectangle(Math.Min(StartROI.X, e.X),
+                Math.Min(StartROI.Y, e.Y),
+                width,
+                height);
+            Refresh();
+
+        }
+
+        private void pictureBoxROI_MouseDown(object sender, MouseEventArgs e)
+        {
+            MouseDown = true;
+            StartROI = e.Location;
+        }
+
+        private void pictureBoxROI_Paint(object sender, PaintEventArgs e)
+        {
+            if (MouseDown)
+            {
+                using (Pen pen = new Pen(Color.Red, 1))
+                {
+                    e.Graphics.DrawRectangle(pen, rect);
+                }
+            }
+
+        }
+
+        private void pictureBoxROI_MouseUp(object sender, MouseEventArgs e)
+        {
+            MouseDown = false;
+            if (pictureBoxROI.Image == null || rect == Rectangle.Empty)
+            { return; }
+
+            var img = new Bitmap(pictureBoxROI.Image).ToImage<Bgr, byte>();
+            img.ROI = rect;
+            var imgROI = img.Copy();
+
+            pictureBoxROI.Image = imgROI.ToBitmap();
+        }
+
+       
     }
 }
+

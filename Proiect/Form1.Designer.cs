@@ -46,6 +46,7 @@ namespace Proiect
             this.buttonScale = new System.Windows.Forms.Button();
             this.pictureBoxRotate = new System.Windows.Forms.PictureBox();
             this.buttonRotate = new System.Windows.Forms.Button();
+            this.pictureBoxROI = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.grayPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChoose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContrast)).BeginInit();
@@ -53,6 +54,7 @@ namespace Proiect
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRed)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScale)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRotate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxROI)).BeginInit();
             this.SuspendLayout();
             // 
             // buttonGrayScale
@@ -209,11 +211,25 @@ namespace Proiect
             this.buttonRotate.UseVisualStyleBackColor = true;
             this.buttonRotate.Click += new System.EventHandler(this.buttonRotate_Click);
             // 
+            // pictureBoxROI
+            // 
+            this.pictureBoxROI.Location = new System.Drawing.Point(408, 158);
+            this.pictureBoxROI.Name = "pictureBoxROI";
+            this.pictureBoxROI.Size = new System.Drawing.Size(218, 208);
+            this.pictureBoxROI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBoxROI.TabIndex = 17;
+            this.pictureBoxROI.TabStop = false;
+            this.pictureBoxROI.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxROI_Paint);
+            this.pictureBoxROI.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxROI_MouseDown);
+            this.pictureBoxROI.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxROI_MouseMove);
+            this.pictureBoxROI.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxROI_MouseUp);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.pictureBoxROI);
             this.Controls.Add(this.buttonRotate);
             this.Controls.Add(this.pictureBoxRotate);
             this.Controls.Add(this.buttonScale);
@@ -240,6 +256,7 @@ namespace Proiect
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRed)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScale)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRotate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxROI)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -264,6 +281,7 @@ namespace Proiect
         private System.Windows.Forms.Button buttonScale;
         private System.Windows.Forms.PictureBox pictureBoxRotate;
         private System.Windows.Forms.Button buttonRotate;
+        private System.Windows.Forms.PictureBox pictureBoxROI;
     }
 }
 
