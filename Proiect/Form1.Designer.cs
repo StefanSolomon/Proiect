@@ -47,6 +47,7 @@ namespace Proiect
             this.pictureBoxRotate = new System.Windows.Forms.PictureBox();
             this.buttonRotate = new System.Windows.Forms.Button();
             this.pictureBoxROI = new System.Windows.Forms.PictureBox();
+            this.buttonH = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grayPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChoose)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContrast)).BeginInit();
@@ -224,11 +225,22 @@ namespace Proiect
             this.pictureBoxROI.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxROI_MouseMove);
             this.pictureBoxROI.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxROI_MouseUp);
             // 
+            // buttonH
+            // 
+            this.buttonH.Location = new System.Drawing.Point(419, 79);
+            this.buttonH.Name = "buttonH";
+            this.buttonH.Size = new System.Drawing.Size(75, 23);
+            this.buttonH.TabIndex = 18;
+            this.buttonH.Text = "Histogram";
+            this.buttonH.UseVisualStyleBackColor = true;
+            this.buttonH.Click += new System.EventHandler(this.buttonH_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.buttonH);
             this.Controls.Add(this.pictureBoxROI);
             this.Controls.Add(this.buttonRotate);
             this.Controls.Add(this.pictureBoxRotate);
@@ -282,6 +294,7 @@ namespace Proiect
         private System.Windows.Forms.PictureBox pictureBoxRotate;
         private System.Windows.Forms.Button buttonRotate;
         private System.Windows.Forms.PictureBox pictureBoxROI;
+        private System.Windows.Forms.Button buttonH;
     }
 }
 

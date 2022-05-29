@@ -1,5 +1,6 @@
 ﻿using Emgu.CV;
 using Emgu.CV.Structure;
+using Emgu.CV.UI;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -140,7 +141,12 @@ namespace Proiect
             pictureBoxROI.Image = imgROI.ToBitmap();
         }
 
-       
+        private void buttonH_Click(object sender, EventArgs e)
+        {
+            HistogramViewer v = new HistogramViewer();
+            v.HistogramCtrl.GenerateHistograms(My_Image, 255);
+            v.Show();
+        }
     }
 }
 
