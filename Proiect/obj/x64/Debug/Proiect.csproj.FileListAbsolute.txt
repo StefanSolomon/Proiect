@@ -23,7 +23,6 @@ C:\Users\Stefan\source\repos\Proiect\Proiect\obj\x64\Debug\Proiect.csproj.CoreCo
 C:\Users\Stefan\source\repos\Proiect\Proiect\obj\x64\Debug\Proiect.exe
 C:\Users\Stefan\source\repos\Proiect\Proiect\obj\x64\Debug\Proiect.pdb
 C:\Users\Stefan\Documents\GitHub\Proiect\Proiect\obj\x64\Debug\Proiect.csproj.AssemblyReference.cache
-C:\Users\Stefan\Documents\GitHub\Proiect\Proiect\obj\x64\Debug\EmguCVProject.Form1.resources
 C:\Users\Stefan\Documents\GitHub\Proiect\Proiect\obj\x64\Debug\Proiect.Properties.Resources.resources
 C:\Users\Stefan\Documents\GitHub\Proiect\Proiect\obj\x64\Debug\Proiect.csproj.GenerateResource.cache
 C:\Users\Stefan\Documents\GitHub\Proiect\Proiect\obj\x64\Debug\Proiect.csproj.CoreCompileInputs.cache
@@ -46,4 +45,4 @@ C:\Users\Stefan\Documents\GitHub\Proiect\Proiect\bin\x64\Debug\msvcp140_codecvt_
 C:\Users\Stefan\Documents\GitHub\Proiect\Proiect\bin\x64\Debug\vcruntime140.dll
 C:\Users\Stefan\Documents\GitHub\Proiect\Proiect\bin\x64\Debug\vcruntime140_1.dll
 C:\Users\Stefan\Documents\GitHub\Proiect\Proiect\bin\x64\Debug\System.Drawing.Common.dll
-C:\Users\Stefan\Documents\GitHub\Proiect\Proiect\obj\x64\Debug\Proiect.csproj.CopyComplete
+C:\Users\Stefan\Documents\GitHub\Proiect\Proiect\obj\x64\Debug\Proiect.Form1.resources
