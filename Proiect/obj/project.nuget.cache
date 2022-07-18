@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iyUcILhRMY/vZ/gTwTMTgdTQeaN0VpSxhTkMyij6ps77Ngc477s6lDdkyjqMtpJxbNXF9iF91xzMgeWLrLK/gg==",
+  "dgSpecHash": "O1yBg7mtdcanrGE5mcAkPYVcvRwm64Wa1XT4aJr0LHTIRXcASXj7JgbfV3ShZspPM1wI+zud3vFE9AaaiwNSFg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Stefan\\source\\repos\\Proiect\\Proiect\\Proiect.csproj",
+  "projectFilePath": "C:\\Users\\Stefan\\Documents\\GitHub\\Proiect\\Proiect\\Proiect.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Stefan\\.nuget\\packages\\emgu.cv\\4.5.5.4823\\emgu.cv.4.5.5.4823.nupkg.sha512",
     "C:\\Users\\Stefan\\.nuget\\packages\\emgu.cv.bitmap\\4.5.5.4823\\emgu.cv.bitmap.4.5.5.4823.nupkg.sha512",

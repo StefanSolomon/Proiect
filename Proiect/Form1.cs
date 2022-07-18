@@ -1,61 +1,59 @@
 ﻿using Emgu.CV;
+using Emgu.CV.CvEnum;
 using Emgu.CV.Structure;
 using Emgu.CV.UI;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
+using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Proiect
+namespace EmguCVProject
 {
     public partial class Form1 : Form
     {
         public Form1()
         {
             InitializeComponent();
+
         }
-
-
-        Emgu.CV.Image<Bgr, Byte> My_Image;
-
-        private void buttonGrayScale_Click(object sender, EventArgs e)
-        {
-            Image<Gray, byte> gray_image = My_Image.Convert<Gray, byte>();
-            grayPictureBox.Image = gray_image.AsBitmap();
-            gray_image[0, 0] = new Gray(200);
-        }
-
-        private void choosePicture_Click(object sender, EventArgs e)
+        Image<Bgr, Byte> My_Image;
+        private void openImageBtn_Click(object sender, EventArgs e)
         {
             OpenFileDialog Openfile = new OpenFileDialog();
             if (Openfile.ShowDialog() == DialogResult.OK)
             {
                 My_Image = new Image<Bgr, byte>(Openfile.FileName);
-                pictureBoxChoose.Image = My_Image.ToBitmap();
+                imageArea.Image = My_Image.ToBitmap();
+
             }
-            pictureBoxROI.Image = pictureBoxChoose.Image;
+            pictureBoxROI.Image = imageArea.Image;
         }
 
-        private void Contrast_Click(object sender, EventArgs e)
+        private void grayImageBtn_Click(object sender, EventArgs e)
         {
-            double alpha = Convert.ToDouble(textBoxContrast.Text);
-            int beta = Convert.ToInt32(textBoxContrast1.Text);
+            Image<Gray, byte> gray_image = My_Image.Convert<Gray, byte>();
+            grayImageArea.Image = gray_image.AsBitmap();
+            gray_image[0, 0] = new Gray(200);
 
-            pictureBoxContrast.Image = My_Image.Mul(alpha + beta).AsBitmap();
         }
-
-        private void buttonGamma_Click(object sender, EventArgs e)
+        private void contrastBtn_Click(object sender, EventArgs e)
         {
-            My_Image._GammaCorrect (Convert.ToDouble(textBoxGamma.Text));
-            pictureBoxGamma.Image = My_Image.AsBitmap();
+            double alpha = Convert.ToDouble(alphaTB.Text);
+            int beta = Convert.ToInt32(betaTB.Text);
+
+            contrastArea.Image = My_Image.Mul(alpha + beta).AsBitmap();
         }
 
-        private void buttonRed_Click(object sender, EventArgs e)
+
+        private void histogramBtn_Click(object sender, EventArgs e)
+        {
+            HistogramViewer v = new HistogramViewer();
+            v.HistogramCtrl.GenerateHistograms(My_Image, 255);
+            v.Show();
+        }
+
+        private void redBtn_Click(object sender, EventArgs e)
         {
             Image<Bgr, Byte> outputImage = new Image<Bgr, byte>(My_Image.Size);
             My_Image.CopyTo(outputImage);
@@ -68,29 +66,29 @@ namespace Proiect
                     data[j, i, 1] = 0;
                 }
             }
-            pictureBoxRed.Image = outputImage.AsBitmap();
+            redArea.Image = outputImage.AsBitmap();
+
         }
 
-        private void buttonScale_Click(object sender, EventArgs e)
+        private void gammaBtn_Click(object sender, EventArgs e)
         {
-            float timesZoom = 0.6F;
-            pictureBoxScale.Image=My_Image.Resize(timesZoom,Emgu.CV.CvEnum.Inter.Cubic ).AsBitmap();
+            My_Image._GammaCorrect(Convert.ToDouble(gammaTB.Text));
+            gammaArea.Image = My_Image.AsBitmap();
         }
 
-        private void buttonRotate_Click(object sender, EventArgs e)
+        private void scaleBtn_Click(object sender, EventArgs e)
         {
-            float Rotate = 90F;
+            float timesZoom = 0.7F;
+            scaleArea.Image = My_Image.Resize(timesZoom, Emgu.CV.CvEnum.Inter.Cubic).AsBitmap();
+        }
+
+        private void rotateBtn_Click(object sender, EventArgs e)
+        {
+            float angle = 45.0F;
             Bgr sall = new Bgr();
-            pictureBoxRotate.Image = My_Image.Rotate(Rotate,sall ,true ).AsBitmap();
+            rotateArea.Image = My_Image.Rotate(angle, sall, true).AsBitmap();
         }
         Rectangle rect; Point StartROI; bool MouseDown;
-
-
-
-
-
-
-
 
         private void pictureBoxROI_MouseMove(object sender, MouseEventArgs e)
         {
@@ -141,12 +139,60 @@ namespace Proiect
             pictureBoxROI.Image = imgROI.ToBitmap();
         }
 
-        private void buttonH_Click(object sender, EventArgs e)
+        int TotalFrame, FrameNo;
+        double Fps;
+        bool IsReadingFrame;
+        VideoCapture capture;
+
+        private void loadEvent_Click_1(object sender, EventArgs e)
         {
-            HistogramViewer v = new HistogramViewer();
-            v.HistogramCtrl.GenerateHistograms(My_Image, 255);
-            v.Show();
+
+            OpenFileDialog ofd = new OpenFileDialog();
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                capture = new VideoCapture(ofd.FileName);
+                Mat m = new Mat();
+                capture.Read(m);
+                pictureBox1.Image = m.ToBitmap();
+
+                TotalFrame = (int)capture.Get(CapProp.FrameCount);
+                Fps = capture.Get(CapProp.Fps);
+                FrameNo = 1;
+                trackBar.Value = FrameNo;
+                trackBar.Minimum = 0;
+                trackBar.Maximum = TotalFrame;
+
+            }
         }
+
+
+
+        private void playEvent_Click_1(object sender, EventArgs e)
+        {
+            if (capture == null)
+            {
+                return;
+            }
+            IsReadingFrame = true;
+            ReadAllFrames();
+
+        }
+
+        private async void ReadAllFrames()
+        {
+
+            Mat m = new Mat();
+            while (IsReadingFrame == true && FrameNo < TotalFrame)
+            {
+                FrameNo += 1;
+                var mat = capture.QueryFrame();
+                pictureBox1.Image = mat.ToBitmap();
+                await Task.Delay(1000 / Convert.ToInt16(Fps));
+                frames.Text = FrameNo.ToString() + "/" + TotalFrame.ToString();
+            }
+        }
+
+
+
     }
 }
-

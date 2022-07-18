@@ -863,11 +863,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Stefan\\source\\repos\\Proiect\\Proiect\\Proiect.csproj",
+      "projectUniqueName": "C:\\Users\\Stefan\\Documents\\GitHub\\Proiect\\Proiect\\Proiect.csproj",
       "projectName": "Proiect",
-      "projectPath": "C:\\Users\\Stefan\\source\\repos\\Proiect\\Proiect\\Proiect.csproj",
+      "projectPath": "C:\\Users\\Stefan\\Documents\\GitHub\\Proiect\\Proiect\\Proiect.csproj",
       "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Stefan\\source\\repos\\Proiect\\Proiect\\obj\\",
+      "outputPath": "C:\\Users\\Stefan\\Documents\\GitHub\\Proiect\\Proiect\\obj\\",
       "projectStyle": "PackageReference",
       "skipContentFileWrite": true,
       "configFilePaths": [

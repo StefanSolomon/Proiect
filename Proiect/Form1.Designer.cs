@@ -1,5 +1,5 @@
 ﻿
-namespace Proiect
+namespace EmguCVProject
 {
     partial class Form1
     {
@@ -29,246 +29,305 @@ namespace Proiect
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonGrayScale = new System.Windows.Forms.Button();
-            this.grayPictureBox = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.pictureBoxChoose = new System.Windows.Forms.PictureBox();
-            this.pictureBoxContrast = new System.Windows.Forms.PictureBox();
-            this.Contrast = new System.Windows.Forms.Button();
-            this.textBoxContrast = new System.Windows.Forms.TextBox();
-            this.textBoxContrast1 = new System.Windows.Forms.TextBox();
-            this.pictureBoxGamma = new System.Windows.Forms.PictureBox();
-            this.buttonGamma = new System.Windows.Forms.Button();
-            this.textBoxGamma = new System.Windows.Forms.TextBox();
-            this.pictureBoxRed = new System.Windows.Forms.PictureBox();
-            this.buttonRed = new System.Windows.Forms.Button();
-            this.pictureBoxScale = new System.Windows.Forms.PictureBox();
-            this.buttonScale = new System.Windows.Forms.Button();
-            this.pictureBoxRotate = new System.Windows.Forms.PictureBox();
-            this.buttonRotate = new System.Windows.Forms.Button();
+            this.openImageBtn = new System.Windows.Forms.Button();
+            this.imageArea = new System.Windows.Forms.PictureBox();
+            this.grayImageBtn = new System.Windows.Forms.Button();
+            this.grayImageArea = new System.Windows.Forms.PictureBox();
+            this.contrastArea = new System.Windows.Forms.PictureBox();
+            this.contrastBtn = new System.Windows.Forms.Button();
+            this.alphaTB = new System.Windows.Forms.TextBox();
+            this.betaTB = new System.Windows.Forms.TextBox();
+            this.histogramBtn = new System.Windows.Forms.Button();
+            this.redBtn = new System.Windows.Forms.Button();
+            this.redArea = new System.Windows.Forms.PictureBox();
+            this.gammaBtn = new System.Windows.Forms.Button();
+            this.gammaArea = new System.Windows.Forms.PictureBox();
+            this.gammaTB = new System.Windows.Forms.TextBox();
+            this.scaleArea = new System.Windows.Forms.PictureBox();
+            this.scaleBtn = new System.Windows.Forms.Button();
+            this.rotateBtn = new System.Windows.Forms.Button();
+            this.rotateArea = new System.Windows.Forms.PictureBox();
             this.pictureBoxROI = new System.Windows.Forms.PictureBox();
-            this.buttonH = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.grayPictureBox)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChoose)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContrast)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGamma)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRed)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScale)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRotate)).BeginInit();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.trackBar = new System.Windows.Forms.TrackBar();
+            this.loadEvent = new System.Windows.Forms.Button();
+            this.playEvent = new System.Windows.Forms.Button();
+            this.frames = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.imageArea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grayImageArea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contrastArea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redArea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gammaArea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scaleArea)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rotateArea)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxROI)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).BeginInit();
             this.SuspendLayout();
             // 
-            // buttonGrayScale
+            // openImageBtn
             // 
-            this.buttonGrayScale.Location = new System.Drawing.Point(173, 129);
-            this.buttonGrayScale.Name = "buttonGrayScale";
-            this.buttonGrayScale.Size = new System.Drawing.Size(75, 23);
-            this.buttonGrayScale.TabIndex = 0;
-            this.buttonGrayScale.Text = "Gray Scale";
-            this.buttonGrayScale.UseVisualStyleBackColor = true;
-            this.buttonGrayScale.Click += new System.EventHandler(this.buttonGrayScale_Click);
+            this.openImageBtn.Location = new System.Drawing.Point(12, 239);
+            this.openImageBtn.Name = "openImageBtn";
+            this.openImageBtn.Size = new System.Drawing.Size(106, 23);
+            this.openImageBtn.TabIndex = 0;
+            this.openImageBtn.Text = "Choose an image";
+            this.openImageBtn.UseVisualStyleBackColor = true;
+            this.openImageBtn.Click += new System.EventHandler(this.openImageBtn_Click);
             // 
-            // grayPictureBox
+            // imageArea
             // 
-            this.grayPictureBox.Location = new System.Drawing.Point(151, 12);
-            this.grayPictureBox.Name = "grayPictureBox";
-            this.grayPictureBox.Size = new System.Drawing.Size(112, 111);
-            this.grayPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.grayPictureBox.TabIndex = 1;
-            this.grayPictureBox.TabStop = false;
+            this.imageArea.Location = new System.Drawing.Point(3, 90);
+            this.imageArea.Name = "imageArea";
+            this.imageArea.Size = new System.Drawing.Size(145, 129);
+            this.imageArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.imageArea.TabIndex = 1;
+            this.imageArea.TabStop = false;
             // 
-            // button1
+            // grayImageBtn
             // 
-            this.button1.Location = new System.Drawing.Point(30, 129);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "ChooseImg";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.choosePicture_Click);
+            this.grayImageBtn.Location = new System.Drawing.Point(219, 239);
+            this.grayImageBtn.Name = "grayImageBtn";
+            this.grayImageBtn.Size = new System.Drawing.Size(75, 23);
+            this.grayImageBtn.TabIndex = 2;
+            this.grayImageBtn.Text = "Make it gray";
+            this.grayImageBtn.UseVisualStyleBackColor = true;
+            this.grayImageBtn.Click += new System.EventHandler(this.grayImageBtn_Click);
             // 
-            // pictureBoxChoose
+            // grayImageArea
             // 
-            this.pictureBoxChoose.Location = new System.Drawing.Point(12, 12);
-            this.pictureBoxChoose.Name = "pictureBoxChoose";
-            this.pictureBoxChoose.Size = new System.Drawing.Size(112, 111);
-            this.pictureBoxChoose.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxChoose.TabIndex = 3;
-            this.pictureBoxChoose.TabStop = false;
+            this.grayImageArea.Location = new System.Drawing.Point(177, 90);
+            this.grayImageArea.Name = "grayImageArea";
+            this.grayImageArea.Size = new System.Drawing.Size(158, 129);
+            this.grayImageArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.grayImageArea.TabIndex = 3;
+            this.grayImageArea.TabStop = false;
             // 
-            // pictureBoxContrast
+            // contrastArea
             // 
-            this.pictureBoxContrast.Location = new System.Drawing.Point(290, 12);
-            this.pictureBoxContrast.Name = "pictureBoxContrast";
-            this.pictureBoxContrast.Size = new System.Drawing.Size(112, 111);
-            this.pictureBoxContrast.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxContrast.TabIndex = 4;
-            this.pictureBoxContrast.TabStop = false;
+            this.contrastArea.Location = new System.Drawing.Point(360, 90);
+            this.contrastArea.Name = "contrastArea";
+            this.contrastArea.Size = new System.Drawing.Size(159, 129);
+            this.contrastArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.contrastArea.TabIndex = 4;
+            this.contrastArea.TabStop = false;
             // 
-            // Contrast
+            // contrastBtn
             // 
-            this.Contrast.Location = new System.Drawing.Point(310, 129);
-            this.Contrast.Name = "Contrast";
-            this.Contrast.Size = new System.Drawing.Size(75, 23);
-            this.Contrast.TabIndex = 5;
-            this.Contrast.Text = "Contrast";
-            this.Contrast.UseVisualStyleBackColor = true;
-            this.Contrast.Click += new System.EventHandler(this.Contrast_Click);
+            this.contrastBtn.Location = new System.Drawing.Point(402, 239);
+            this.contrastBtn.Name = "contrastBtn";
+            this.contrastBtn.Size = new System.Drawing.Size(75, 23);
+            this.contrastBtn.TabIndex = 5;
+            this.contrastBtn.Text = "Contrast";
+            this.contrastBtn.UseVisualStyleBackColor = true;
+            this.contrastBtn.Click += new System.EventHandler(this.contrastBtn_Click);
             // 
-            // textBoxContrast
+            // alphaTB
             // 
-            this.textBoxContrast.Location = new System.Drawing.Point(408, 12);
-            this.textBoxContrast.Name = "textBoxContrast";
-            this.textBoxContrast.Size = new System.Drawing.Size(100, 20);
-            this.textBoxContrast.TabIndex = 6;
+            this.alphaTB.Location = new System.Drawing.Point(402, 12);
+            this.alphaTB.Name = "alphaTB";
+            this.alphaTB.Size = new System.Drawing.Size(100, 20);
+            this.alphaTB.TabIndex = 6;
             // 
-            // textBoxContrast1
+            // betaTB
             // 
-            this.textBoxContrast1.Location = new System.Drawing.Point(408, 38);
-            this.textBoxContrast1.Name = "textBoxContrast1";
-            this.textBoxContrast1.Size = new System.Drawing.Size(100, 20);
-            this.textBoxContrast1.TabIndex = 7;
+            this.betaTB.Location = new System.Drawing.Point(402, 38);
+            this.betaTB.Name = "betaTB";
+            this.betaTB.Size = new System.Drawing.Size(100, 20);
+            this.betaTB.TabIndex = 7;
             // 
-            // pictureBoxGamma
+            // histogramBtn
             // 
-            this.pictureBoxGamma.Location = new System.Drawing.Point(514, 12);
-            this.pictureBoxGamma.Name = "pictureBoxGamma";
-            this.pictureBoxGamma.Size = new System.Drawing.Size(112, 111);
-            this.pictureBoxGamma.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxGamma.TabIndex = 8;
-            this.pictureBoxGamma.TabStop = false;
+            this.histogramBtn.Location = new System.Drawing.Point(12, 12);
+            this.histogramBtn.Name = "histogramBtn";
+            this.histogramBtn.Size = new System.Drawing.Size(75, 23);
+            this.histogramBtn.TabIndex = 8;
+            this.histogramBtn.Text = "Histogram";
+            this.histogramBtn.UseVisualStyleBackColor = true;
+            this.histogramBtn.Click += new System.EventHandler(this.histogramBtn_Click);
             // 
-            // buttonGamma
+            // redBtn
             // 
-            this.buttonGamma.Location = new System.Drawing.Point(531, 129);
-            this.buttonGamma.Name = "buttonGamma";
-            this.buttonGamma.Size = new System.Drawing.Size(75, 23);
-            this.buttonGamma.TabIndex = 9;
-            this.buttonGamma.Text = "Gamma";
-            this.buttonGamma.UseVisualStyleBackColor = true;
-            this.buttonGamma.Click += new System.EventHandler(this.buttonGamma_Click);
+            this.redBtn.Location = new System.Drawing.Point(572, 239);
+            this.redBtn.Name = "redBtn";
+            this.redBtn.Size = new System.Drawing.Size(94, 23);
+            this.redBtn.TabIndex = 9;
+            this.redBtn.Text = "Red channel";
+            this.redBtn.UseVisualStyleBackColor = true;
+            this.redBtn.Click += new System.EventHandler(this.redBtn_Click);
             // 
-            // textBoxGamma
+            // redArea
             // 
-            this.textBoxGamma.Location = new System.Drawing.Point(632, 12);
-            this.textBoxGamma.Name = "textBoxGamma";
-            this.textBoxGamma.Size = new System.Drawing.Size(100, 20);
-            this.textBoxGamma.TabIndex = 10;
+            this.redArea.Location = new System.Drawing.Point(543, 101);
+            this.redArea.Name = "redArea";
+            this.redArea.Size = new System.Drawing.Size(151, 118);
+            this.redArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.redArea.TabIndex = 10;
+            this.redArea.TabStop = false;
             // 
-            // pictureBoxRed
+            // gammaBtn
             // 
-            this.pictureBoxRed.Location = new System.Drawing.Point(12, 158);
-            this.pictureBoxRed.Name = "pictureBoxRed";
-            this.pictureBoxRed.Size = new System.Drawing.Size(112, 111);
-            this.pictureBoxRed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxRed.TabIndex = 11;
-            this.pictureBoxRed.TabStop = false;
+            this.gammaBtn.Location = new System.Drawing.Point(746, 239);
+            this.gammaBtn.Name = "gammaBtn";
+            this.gammaBtn.Size = new System.Drawing.Size(75, 23);
+            this.gammaBtn.TabIndex = 11;
+            this.gammaBtn.Text = "gamma";
+            this.gammaBtn.UseVisualStyleBackColor = true;
+            this.gammaBtn.Click += new System.EventHandler(this.gammaBtn_Click);
             // 
-            // buttonRed
+            // gammaArea
             // 
-            this.buttonRed.Location = new System.Drawing.Point(30, 275);
-            this.buttonRed.Name = "buttonRed";
-            this.buttonRed.Size = new System.Drawing.Size(75, 23);
-            this.buttonRed.TabIndex = 12;
-            this.buttonRed.Text = "Red Filter";
-            this.buttonRed.UseVisualStyleBackColor = true;
-            this.buttonRed.Click += new System.EventHandler(this.buttonRed_Click);
+            this.gammaArea.Location = new System.Drawing.Point(720, 90);
+            this.gammaArea.Name = "gammaArea";
+            this.gammaArea.Size = new System.Drawing.Size(130, 129);
+            this.gammaArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gammaArea.TabIndex = 12;
+            this.gammaArea.TabStop = false;
             // 
-            // pictureBoxScale
+            // gammaTB
             // 
-            this.pictureBoxScale.Location = new System.Drawing.Point(151, 158);
-            this.pictureBoxScale.Name = "pictureBoxScale";
-            this.pictureBoxScale.Size = new System.Drawing.Size(112, 111);
-            this.pictureBoxScale.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBoxScale.TabIndex = 13;
-            this.pictureBoxScale.TabStop = false;
+            this.gammaTB.Location = new System.Drawing.Point(735, 64);
+            this.gammaTB.Name = "gammaTB";
+            this.gammaTB.Size = new System.Drawing.Size(100, 20);
+            this.gammaTB.TabIndex = 13;
             // 
-            // buttonScale
+            // scaleArea
             // 
-            this.buttonScale.Location = new System.Drawing.Point(173, 275);
-            this.buttonScale.Name = "buttonScale";
-            this.buttonScale.Size = new System.Drawing.Size(75, 23);
-            this.buttonScale.TabIndex = 14;
-            this.buttonScale.Text = "Scale";
-            this.buttonScale.UseVisualStyleBackColor = true;
-            this.buttonScale.Click += new System.EventHandler(this.buttonScale_Click);
+            this.scaleArea.Location = new System.Drawing.Point(36, 342);
+            this.scaleArea.Name = "scaleArea";
+            this.scaleArea.Size = new System.Drawing.Size(157, 110);
+            this.scaleArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.scaleArea.TabIndex = 14;
+            this.scaleArea.TabStop = false;
             // 
-            // pictureBoxRotate
+            // scaleBtn
             // 
-            this.pictureBoxRotate.Location = new System.Drawing.Point(290, 158);
-            this.pictureBoxRotate.Name = "pictureBoxRotate";
-            this.pictureBoxRotate.Size = new System.Drawing.Size(112, 111);
-            this.pictureBoxRotate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxRotate.TabIndex = 15;
-            this.pictureBoxRotate.TabStop = false;
+            this.scaleBtn.Location = new System.Drawing.Point(73, 458);
+            this.scaleBtn.Name = "scaleBtn";
+            this.scaleBtn.Size = new System.Drawing.Size(75, 23);
+            this.scaleBtn.TabIndex = 15;
+            this.scaleBtn.Text = "Scale";
+            this.scaleBtn.UseVisualStyleBackColor = true;
+            this.scaleBtn.Click += new System.EventHandler(this.scaleBtn_Click);
             // 
-            // buttonRotate
+            // rotateBtn
             // 
-            this.buttonRotate.Location = new System.Drawing.Point(310, 275);
-            this.buttonRotate.Name = "buttonRotate";
-            this.buttonRotate.Size = new System.Drawing.Size(75, 23);
-            this.buttonRotate.TabIndex = 16;
-            this.buttonRotate.Text = "Rotate";
-            this.buttonRotate.UseVisualStyleBackColor = true;
-            this.buttonRotate.Click += new System.EventHandler(this.buttonRotate_Click);
+            this.rotateBtn.Location = new System.Drawing.Point(247, 458);
+            this.rotateBtn.Name = "rotateBtn";
+            this.rotateBtn.Size = new System.Drawing.Size(75, 23);
+            this.rotateBtn.TabIndex = 16;
+            this.rotateBtn.Text = "Rotate";
+            this.rotateBtn.UseVisualStyleBackColor = true;
+            this.rotateBtn.Click += new System.EventHandler(this.rotateBtn_Click);
+            // 
+            // rotateArea
+            // 
+            this.rotateArea.Location = new System.Drawing.Point(219, 342);
+            this.rotateArea.Name = "rotateArea";
+            this.rotateArea.Size = new System.Drawing.Size(130, 110);
+            this.rotateArea.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.rotateArea.TabIndex = 17;
+            this.rotateArea.TabStop = false;
             // 
             // pictureBoxROI
             // 
-            this.pictureBoxROI.Location = new System.Drawing.Point(408, 158);
+            this.pictureBoxROI.Location = new System.Drawing.Point(414, 342);
             this.pictureBoxROI.Name = "pictureBoxROI";
-            this.pictureBoxROI.Size = new System.Drawing.Size(218, 208);
-            this.pictureBoxROI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBoxROI.TabIndex = 17;
+            this.pictureBoxROI.Size = new System.Drawing.Size(258, 224);
+            this.pictureBoxROI.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBoxROI.TabIndex = 18;
             this.pictureBoxROI.TabStop = false;
             this.pictureBoxROI.Paint += new System.Windows.Forms.PaintEventHandler(this.pictureBoxROI_Paint);
             this.pictureBoxROI.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBoxROI_MouseDown);
             this.pictureBoxROI.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBoxROI_MouseMove);
             this.pictureBoxROI.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBoxROI_MouseUp);
             // 
-            // buttonH
+            // pictureBox1
             // 
-            this.buttonH.Location = new System.Drawing.Point(419, 79);
-            this.buttonH.Name = "buttonH";
-            this.buttonH.Size = new System.Drawing.Size(75, 23);
-            this.buttonH.TabIndex = 18;
-            this.buttonH.Text = "Histogram";
-            this.buttonH.UseVisualStyleBackColor = true;
-            this.buttonH.Click += new System.EventHandler(this.buttonH_Click);
+            this.pictureBox1.Location = new System.Drawing.Point(721, 342);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(232, 224);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
+            // trackBar
+            // 
+            this.trackBar.Location = new System.Drawing.Point(721, 572);
+            this.trackBar.Name = "trackBar";
+            this.trackBar.Size = new System.Drawing.Size(104, 45);
+            this.trackBar.TabIndex = 20;
+            // 
+            // loadEvent
+            // 
+            this.loadEvent.Location = new System.Drawing.Point(846, 572);
+            this.loadEvent.Name = "loadEvent";
+            this.loadEvent.Size = new System.Drawing.Size(75, 23);
+            this.loadEvent.TabIndex = 21;
+            this.loadEvent.Text = "Incarca";
+            this.loadEvent.UseVisualStyleBackColor = true;
+            this.loadEvent.Click += new System.EventHandler(this.loadEvent_Click_1);
+            // 
+            // playEvent
+            // 
+            this.playEvent.Location = new System.Drawing.Point(846, 601);
+            this.playEvent.Name = "playEvent";
+            this.playEvent.Size = new System.Drawing.Size(75, 23);
+            this.playEvent.TabIndex = 22;
+            this.playEvent.Text = "play";
+            this.playEvent.UseVisualStyleBackColor = true;
+            this.playEvent.Click += new System.EventHandler(this.playEvent_Click_1);
+            // 
+            // frames
+            // 
+            this.frames.AutoSize = true;
+            this.frames.Location = new System.Drawing.Point(815, 326);
+            this.frames.Name = "frames";
+            this.frames.Size = new System.Drawing.Size(21, 13);
+            this.frames.TabIndex = 23;
+            this.frames.Text = "fps";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.buttonH);
+            this.ClientSize = new System.Drawing.Size(1442, 687);
+            this.Controls.Add(this.frames);
+            this.Controls.Add(this.playEvent);
+            this.Controls.Add(this.loadEvent);
+            this.Controls.Add(this.trackBar);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBoxROI);
-            this.Controls.Add(this.buttonRotate);
-            this.Controls.Add(this.pictureBoxRotate);
-            this.Controls.Add(this.buttonScale);
-            this.Controls.Add(this.pictureBoxScale);
-            this.Controls.Add(this.buttonRed);
-            this.Controls.Add(this.pictureBoxRed);
-            this.Controls.Add(this.textBoxGamma);
-            this.Controls.Add(this.buttonGamma);
-            this.Controls.Add(this.pictureBoxGamma);
-            this.Controls.Add(this.textBoxContrast1);
-            this.Controls.Add(this.textBoxContrast);
-            this.Controls.Add(this.Contrast);
-            this.Controls.Add(this.pictureBoxContrast);
-            this.Controls.Add(this.pictureBoxChoose);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.grayPictureBox);
-            this.Controls.Add(this.buttonGrayScale);
+            this.Controls.Add(this.rotateArea);
+            this.Controls.Add(this.rotateBtn);
+            this.Controls.Add(this.scaleBtn);
+            this.Controls.Add(this.scaleArea);
+            this.Controls.Add(this.gammaTB);
+            this.Controls.Add(this.gammaArea);
+            this.Controls.Add(this.gammaBtn);
+            this.Controls.Add(this.redArea);
+            this.Controls.Add(this.redBtn);
+            this.Controls.Add(this.histogramBtn);
+            this.Controls.Add(this.betaTB);
+            this.Controls.Add(this.alphaTB);
+            this.Controls.Add(this.contrastBtn);
+            this.Controls.Add(this.contrastArea);
+            this.Controls.Add(this.grayImageArea);
+            this.Controls.Add(this.grayImageBtn);
+            this.Controls.Add(this.imageArea);
+            this.Controls.Add(this.openImageBtn);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.grayPictureBox)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxChoose)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxContrast)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxGamma)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRed)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxScale)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxRotate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageArea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grayImageArea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.contrastArea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.redArea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gammaArea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scaleArea)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rotateArea)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxROI)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -276,25 +335,30 @@ namespace Proiect
 
         #endregion
 
-        private System.Windows.Forms.Button buttonGrayScale;
-        private System.Windows.Forms.PictureBox grayPictureBox;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.PictureBox pictureBoxChoose;
-        private System.Windows.Forms.PictureBox pictureBoxContrast;
-        private System.Windows.Forms.Button Contrast;
-        private System.Windows.Forms.TextBox textBoxContrast;
-        private System.Windows.Forms.TextBox textBoxContrast1;
-        private System.Windows.Forms.PictureBox pictureBoxGamma;
-        private System.Windows.Forms.Button buttonGamma;
-        private System.Windows.Forms.TextBox textBoxGamma;
-        private System.Windows.Forms.PictureBox pictureBoxRed;
-        private System.Windows.Forms.Button buttonRed;
-        private System.Windows.Forms.PictureBox pictureBoxScale;
-        private System.Windows.Forms.Button buttonScale;
-        private System.Windows.Forms.PictureBox pictureBoxRotate;
-        private System.Windows.Forms.Button buttonRotate;
+        private System.Windows.Forms.Button openImageBtn;
+        private System.Windows.Forms.PictureBox imageArea;
+        private System.Windows.Forms.Button grayImageBtn;
+        private System.Windows.Forms.PictureBox grayImageArea;
+        private System.Windows.Forms.PictureBox contrastArea;
+        private System.Windows.Forms.Button contrastBtn;
+        private System.Windows.Forms.TextBox alphaTB;
+        private System.Windows.Forms.TextBox betaTB;
+        private System.Windows.Forms.Button histogramBtn;
+        private System.Windows.Forms.Button redBtn;
+        private System.Windows.Forms.PictureBox redArea;
+        private System.Windows.Forms.Button gammaBtn;
+        private System.Windows.Forms.PictureBox gammaArea;
+        private System.Windows.Forms.TextBox gammaTB;
+        private System.Windows.Forms.PictureBox scaleArea;
+        private System.Windows.Forms.Button scaleBtn;
+        private System.Windows.Forms.Button rotateBtn;
+        private System.Windows.Forms.PictureBox rotateArea;
         private System.Windows.Forms.PictureBox pictureBoxROI;
-        private System.Windows.Forms.Button buttonH;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TrackBar trackBar;
+        private System.Windows.Forms.Button loadEvent;
+        private System.Windows.Forms.Button playEvent;
+        private System.Windows.Forms.Label frames;
     }
 }
 
